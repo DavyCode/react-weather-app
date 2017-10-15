@@ -1,3 +1,4 @@
+
 module.exports = {
     entry: './app/app.jsx',
     output: {
@@ -19,10 +20,11 @@ module.exports = {
         loaders: [{
             loader: 'babel-loader',
             query: {
-                presets: ['react', 'env']
+                presets: ['react', 'es2015']
             },
             test: /\.jsx?$/,
             exclude: /(node_modules|bower_components)/
         }]
     }
 };
+
