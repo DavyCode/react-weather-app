@@ -61,16 +61,18 @@
 	var Sample = __webpack_require__(227);
 
 	ReactDOM.render(React.createElement(
-	  Router,
-	  { history: hashHistory },
-	  React.createElement(
-	    Route,
-	    { path: '/', component: Main },
-	    React.createElement(Route, { path: 'about', component: About }),
-	    React.createElement(Route, { path: 'sample', component: Sample }),
-	    React.createElement(IndexRoute, { component: Weather })
-	  )
+	    Router,
+	    { history: hashHistory },
+	    React.createElement(
+	        Route,
+	        { path: '/', component: Main },
+	        React.createElement(Route, { path: 'about', component: About }),
+	        React.createElement(Route, { path: 'sample', component: Sample }),
+	        React.createElement(IndexRoute, { component: Weather })
+	    )
 	), document.getElementById('app'));
+
+	//  82aba45329a8c1c7716a6803b4e42fb3
 
 /***/ },
 /* 1 */

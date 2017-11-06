@@ -1,7 +1,7 @@
 {
-    "name": "boilerplate",
+    "name": "weather_app",
     "version": "1.0.0",
-    "description": "Simple react boilerplate",
+    "description": "Simple react weather_app",
     "main": "server.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
