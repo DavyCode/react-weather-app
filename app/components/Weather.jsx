@@ -5,11 +5,14 @@ var WeatherMessage = require('WeatherMessage');
 
 
 var Weather = React.createClass({
+  handleSearch : function (location){
+      alert(location);
+  },
   render: function(){
     return(
         <div>
           <h3>Weather component</h3>
-          <WeatherForm/>
+          <WeatherForm onSearch={this.handleSearch}/>
           <WeatherMessage/>
         </div>
     );
