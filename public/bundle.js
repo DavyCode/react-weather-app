@@ -26186,8 +26186,17 @@
 	var Weather = React.createClass({
 	  displayName: 'Weather',
 	
+	  getInitialState: function getInitialState() {
+	    return {
+	      location: 'Miami',
+	      temp: 66
+	    };
+	  },
 	  handleSearch: function handleSearch(location) {
-	    alert(location);
+	    this.setState({
+	      location: location,
+	      temp: 26
+	    });
 	  },
 	  render: function render() {
 	    return React.createElement(

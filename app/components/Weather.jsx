@@ -5,8 +5,17 @@ var WeatherMessage = require('WeatherMessage');
 
 
 var Weather = React.createClass({
+  getInitialState : function(){
+     return {
+       location : 'Miami',
+       temp : 66
+     }
+  },
   handleSearch : function (location){
-      alert(location);
+      this.setState({
+        location : location,
+        temp: 26
+      });
   },
   render: function(){
     return(
