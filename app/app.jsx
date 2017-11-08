@@ -10,9 +10,9 @@ var Sample = require('Sample');
 ReactDOM.render(
       <Router history={hashHistory}>
           <Route path='/' component={Main}>
-            <Route path="about" component={About}/>
+              <Route path="about" component={About}/>
               <Route path="sample" component={Sample}/>          
-             <IndexRoute component={Weather}/>  
+              <IndexRoute component={Weather}/>  
           </Route>    
       </Router>,
       document.getElementById('app')
@@ -21,4 +21,3 @@ ReactDOM.render(
 
 
 
-    //  82aba45329a8c1c7716a6803b4e42fb3
