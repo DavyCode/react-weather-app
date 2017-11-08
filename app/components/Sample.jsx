@@ -1,11 +1,5 @@
 var React = require('react');
 
-var Sample = React.createClass({
-  render: function(){
-    return(
-        <h3>Sample component</h3>
-    );
-  }
-});
+var Sample = (props) =>  <h3>Sample component refactor</h3>
 
 module.exports= Sample;
