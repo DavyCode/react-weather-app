@@ -25512,27 +25512,47 @@
 
 	  getInitialState: function getInitialState() {
 	    return {
-	      location: 'Miami',
-	      temp: 65
+	      loading: false
 	    };
 	  },
 	  handleSearch: function handleSearch(location) {
 	    var that = this;
+
+	    this.setState({
+	      loading: true
+	    });
+
 	    openWeatherMap.getTemp(location).then(function (temp) {
 	      that.setState({
 	        location: location,
-	        temp: temp
+	        temp: temp,
+	        loading: false
 	      });
-	    }, function (errMessage) {
-	      alert(errMessage);
-	      console.log(errMessage);
+	    }, function (errorMessage) {
+	      that.setState({
+	        loading: false
+	      });
+	      alert(errorMessage);
 	    });
 	  },
 	  render: function render() {
 	    var _state = this.state,
+	        loading = _state.loading,
 	        temp = _state.temp,
 	        location = _state.location;
 
+
+	    function renderMessage() {
+	      if (loading) {
+	        return React.createElement(
+	          'h3',
+	          null,
+	          'Just a second...'
+	        );
+	      } else if (temp && location) {
+	        return React.createElement(WeatherMessage, { temp: temp, location: location });
+	      }
+	    }
 
 	    return React.createElement(
 	      'div',
@@ -25543,7 +25563,7 @@
 	        'Weather component'
 	      ),
 	      React.createElement(WeatherForm, { onSearch: this.handleSearch }),
-	      React.createElement(WeatherMessage, { temp: temp, location: location })
+	      renderMessage()
 	    );
 	  }
 	});
