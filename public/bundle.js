@@ -27325,9 +27325,64 @@
 
 	var About = function About(props) {
 	  return React.createElement(
-	    'h3',
+	    'div',
 	    null,
-	    'About component refactor'
+	    React.createElement(
+	      'h1',
+	      { className: 'text-center page-title' },
+	      'About'
+	    ),
+	    React.createElement('hr', null),
+	    React.createElement(
+	      'p',
+	      null,
+	      'This is a weather application build on ReactJS. '
+	    ),
+	    React.createElement(
+	      'p',
+	      null,
+	      'Here are some of the tools I used:'
+	    ),
+	    React.createElement(
+	      'ul',
+	      null,
+	      React.createElement(
+	        'li',
+	        null,
+	        'You can get the source code on GitHub',
+	        React.createElement('br', null),
+	        'Hit this link ',
+	        React.createElement(
+	          'a',
+	          { href: 'https://github.com/DavyCode/react-weather-app' },
+	          'Link'
+	        )
+	      ),
+	      ' ',
+	      React.createElement('br', null),
+	      React.createElement(
+	        'li',
+	        null,
+	        React.createElement(
+	          'a',
+	          { href: 'https://facebook.github.io/react' },
+	          'React'
+	        ),
+	        ' - JavaScript framework used.'
+	      ),
+	      React.createElement('br', null),
+	      React.createElement(
+	        'li',
+	        null,
+	        React.createElement(
+	          'a',
+	          { href: 'http://openweathermap.org' },
+	          'Open Weather Map'
+	        ),
+	        ' - I used Open Weather Map to search for weather data by city name.'
+	      ),
+	      React.createElement('br', null)
+	    )
 	  );
 	};
 
