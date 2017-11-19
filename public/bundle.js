@@ -25491,17 +25491,20 @@
 	var Nav = __webpack_require__(230);
 
 	var Main = function Main(props) {
-	  return React.createElement(
-	    'div',
-	    null,
-	    React.createElement(Nav, null),
-	    React.createElement(
-	      'h2',
-	      null,
-	      'Main component Refactor'
-	    ),
-	    props.children
-	  );
+	    return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(Nav, null),
+	        React.createElement(
+	            'div',
+	            { className: 'row' },
+	            React.createElement(
+	                'div',
+	                { className: 'columns medium-6 large-4 small-centered' },
+	                props.children
+	            )
+	        )
+	    );
 	};
 
 	module.exports = Main;
@@ -27338,14 +27341,47 @@
 
 	var React = __webpack_require__(8);
 
-	var Sample = function Sample(props) {
-	  return React.createElement(
-	    'h3',
-	    null,
-	    'Sample component refactor'
-	  );
-	};
+	var _require = __webpack_require__(166),
+	    Link = _require.Link;
 
+	var Sample = function Sample(props) {
+	    return React.createElement(
+	        'div',
+	        null,
+	        React.createElement(
+	            'h1',
+	            { className: 'text-center' },
+	            'Sample component'
+	        ),
+	        React.createElement(
+	            'p',
+	            null,
+	            'Here are a few examples to try out'
+	        ),
+	        React.createElement(
+	            'ol',
+	            null,
+	            React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                    Link,
+	                    { to: '/?location=Abuja' },
+	                    ' Abuja, Nigeria '
+	                )
+	            ),
+	            React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                    Link,
+	                    { to: '/?location=Lagos' },
+	                    ' Lagos, Nigeria '
+	                )
+	            )
+	        )
+	    );
+	};
 	module.exports = Sample;
 
 /***/ },
