@@ -25664,7 +25664,7 @@
 
 	    function renderError() {
 	      if (typeof errorMessage === 'string') {
-	        return React.createElement(ErrorModal, null);
+	        return React.createElement(ErrorModal, { message: errorMessage });
 	      }
 	    };
 
@@ -25764,24 +25764,39 @@
 	var ErrorModal = React.createClass({
 	  displayName: 'ErrorModal',
 
+	  getDefaultProps: function getDefaultProps() {
+	    return {
+	      title: 'Error'
+	    };
+	  },
+	  propTypes: {
+	    title: React.PropTypes.string,
+	    message: React.PropTypes.string.isRequired
+	  },
+
 	  componentDidMount: function componentDidMount() {
 	    var modal = new Foundation.Reveal($('#error-modal'));
 	    modal.open();
 	  },
 
 	  render: function render() {
+	    var _props = this.props,
+	        title = _props.title,
+	        message = _props.message;
+
+
 	    return React.createElement(
 	      'div',
 	      { id: 'error-modal', className: 'reveal tiny text-center', 'data-reveal': '' },
 	      React.createElement(
 	        'h4',
 	        null,
-	        'Some title'
+	        title
 	      ),
 	      React.createElement(
 	        'p',
 	        null,
-	        'Error message'
+	        message
 	      ),
 	      React.createElement(
 	        'p',
